@@ -4,9 +4,12 @@
     <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+    
+    <!-- ADDED INTERNET PERMISSION TO PREVENT RELEASE CRASHES -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:label="TOdo App"
+        android:label="Todo App"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

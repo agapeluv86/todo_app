@@ -5,7 +5,8 @@ plugins {
 }
 
 android {
-    namespace = "com.example.todo_app"
+    // CHANGED: Matches your MainActivity.kt
+    namespace = "com.agapeluv.todoapp"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -16,7 +17,8 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.todo_app"
+        // CHANGED: Matches your MainActivity.kt
+        applicationId = "com.agapeluv.todoapp"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -25,9 +27,11 @@ android {
 
     buildTypes {
         release {
-            // Using debug signing for sideload testing.
-            // Switch to a real signingConfig when publishing to Play Store.
             signingConfig = signingConfigs.getByName("debug")
+            
+            // ADDED: Fixes the release mode crashes
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
 }
